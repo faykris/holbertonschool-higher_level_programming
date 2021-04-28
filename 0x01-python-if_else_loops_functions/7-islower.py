@@ -1,5 +1,5 @@
 def islower(c):
-        for l in range(97, 123):
-                if chr(l) == c:
-                        return (1)
-        return (0)
+                if (ord(c) >= 97 and ord(c) <= 122):
+                                return (1)
+                else:
+                                return (0)
