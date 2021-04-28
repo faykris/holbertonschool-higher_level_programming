@@ -8,5 +8,5 @@ def uppercase(str):
 			upp = upp + cha
 		else:
 			upp = upp + s
-		i+=1
+		i += 1
 	print(upp)
