@@ -3,7 +3,7 @@ def element_at(my_list, idx):
     i = 0
     if idx < 0:
         return "None"
-    while i < len(my_list):
+    while i <= len(my_list):
         if i - 1 == idx:
             return i
         i += 1
