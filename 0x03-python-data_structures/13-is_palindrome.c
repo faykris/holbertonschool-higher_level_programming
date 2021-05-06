@@ -25,7 +25,7 @@ int is_palindrome(listint_t **head)
 		length = length->next;
 		i++;
 	}
-	list = malloc(sizeof(int) * i);
+	list = calloc(i, sizeof(int));
 	while (backward != NULL)
 	{
 		list[j] = backward->n;
