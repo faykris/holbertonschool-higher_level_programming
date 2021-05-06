@@ -2,4 +2,8 @@ main.py
 *-main.py
 __pycache__
 .idea
+.vscode
+13-main.c
+linked_lists.c
+palindrome
 .gitignore
