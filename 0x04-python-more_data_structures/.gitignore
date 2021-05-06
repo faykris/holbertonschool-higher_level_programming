@@ -1,0 +1,5 @@
+.vscode
+*-main.py
+*-main.c
+__pycache__
+main.py
