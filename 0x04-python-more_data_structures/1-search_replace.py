@@ -3,7 +3,7 @@ def search_replace(my_list, search, replace):
     if my_list is None:
         return
     if len(my_list) == 0:
-        return
+        return my_list
     new_list = list(" " * len(my_list))
     i = 0
     for ele in my_list:
