@@ -2,7 +2,11 @@
 def safe_print_list_integers(my_list=[], x=0):
     i = 0
     printed = 0
-    while i < x:
+    em_list = []
+    if my_list == em_list:
+        print("")
+        return 0
+    for i in range(x):
         try:
             print("{:d}".format(my_list[i]), end="")
             printed += 1
@@ -10,9 +14,6 @@ def safe_print_list_integers(my_list=[], x=0):
             print(end="")
         except TypeError:
             print(end="")
-        except IndexError:
-            print(end="")
-        i += 1
     if x > 0:
         print()
     return printed
