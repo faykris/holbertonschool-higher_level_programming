@@ -2,7 +2,7 @@
 def list_division(my_list_1, my_list_2, list_length):
     i = 0
     if len(my_list_1) == 0 and len(my_list_1) == 0:
-        return None
+        return ""
     if len(my_list_1) > len(my_list_2):
         re_list = [0] * len(my_list_1)
     else:
