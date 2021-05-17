@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 def list_division(my_list_1, my_list_2, list_length):
     i = 0
-    if len(my_list_2) == 0:
-        return my_list_1
+    te = "wrong type"
+    ze = "division by 0"
+    ie = "out of range"
     if len(my_list_1) > len(my_list_2):
         re_list = [0] * len(my_list_1)
     else:
@@ -11,13 +12,13 @@ def list_division(my_list_1, my_list_2, list_length):
         try:
             re_list[i] = my_list_1[i] / my_list_2[i]
         except TypeError:
-            print("wrong type")
+            print("{}".format(te))
             re_list[i] = 0
         except ZeroDivisionError:
-            print("division by 0")
+            print("{}".format(ze))
             re_list[i] = 0
         except IndexError:
-            print("out of range")
+            print("{}".format(ie))
             re_list[i] = 0
         finally:
             i += 1
