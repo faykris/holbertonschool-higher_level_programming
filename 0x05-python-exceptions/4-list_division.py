@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 def list_division(my_list_1, my_list_2, list_length):
     i = 0
+    if len(my_list_1) == 0 or len(my_list_2) == 0:
+        return []
     mn_list = max(len(my_list_1), len(my_list_2))
     re_list = [0] * mn_list
     while i < mn_list:
