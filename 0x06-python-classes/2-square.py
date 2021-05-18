@@ -13,9 +13,15 @@ class Square:
     """Square
         Init function to instance square size
         validate if a integer and if less than 0
+           
     """
-
     def __init__(self, _Square__size=0):
+        """__init__ method
+            Args:
+                _Square__size: size of square, must be integer >= 0
+            Attributes:
+                _Square__size: validate if a correct integer value
+        """
         self._Square__size = _Square__size
         if type(_Square__size) != int:
             raise TypeError("size must be an integer")
