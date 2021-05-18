@@ -1,10 +1,9 @@
 #!/usr/bin/python3
 def list_division(my_list_1, my_list_2, list_length):
     i = 0
-    if list_length <= 0 or (len(my_list_1) == 0 and len(my_list_2) == 0):
-        return []
-    re_list = [0] * max(len(my_list_1), len(my_list_2))
-    while i < list_length:
+    mn_list = max(len(my_list_1), len(my_list_2))
+    re_list = [0] * mn_list
+    while i < mn_list:
         try:
             re_list[i] = my_list_1[i] / my_list_2[i]
         except TypeError:
