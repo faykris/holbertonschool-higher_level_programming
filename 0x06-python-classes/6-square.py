@@ -40,12 +40,8 @@ class Square:
             Attributes:
                 size: validate if a correct integer value
         """
-        self.__size = size
-        self.__position = position
-        if type(size) != int:
-            raise TypeError("size must be an integer")
-        elif size < 0:
-            raise ValueError("size must be >= 0")
+        self.size = size
+        self.position = position
 
     def area(self):
         """area method
@@ -86,9 +82,11 @@ class Square:
         """position - setter method
                     validates the data if a valid tuple
         """
-        if type(value[0]) != int or type(value[1]) != int:
-            raise TypeError("position must be a tuple of 2 positive integers")
         if type(value) != tuple:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        elif len(value) != 2:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        elif type(value[0]) != int or type(value[1]) != int:
             raise TypeError("position must be a tuple of 2 positive integers")
         elif len(value) != 2 or value[0] < 0 or value[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
@@ -98,6 +96,7 @@ class Square:
         """my_print
                 print the square
         """
+        print("\n" * self.position[1], end="")
         for i in range(self.__size):
             print(" " * self.position[0], end="")
             for j in range(self.__size):
