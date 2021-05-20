@@ -55,6 +55,9 @@ class Node:
 
 
 class SinglyLinkedList:
+    """Class SinglyLinkedList
+        Contain the sorted nodes and str methods
+    """
     def __init__(self):
         """Init method
             init head with value None
