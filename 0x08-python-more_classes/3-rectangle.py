@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """3. String representation
     classes of module:
         Rectangle: print a rectangle

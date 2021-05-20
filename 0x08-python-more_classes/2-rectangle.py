@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """2. Area and perimeter
     classes of module:
         Rectangle: print a rectangle

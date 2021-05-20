@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """1. Real definition of a rectangle
     classes of module:
         Rectangle: print a rectangle

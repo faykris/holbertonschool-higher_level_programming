@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """0. Simple rectangle
     classes of module:
         Rectangle: print a rectangle
@@ -10,6 +11,7 @@ class Rectangle:
     """
     def __init__(self):
         """Init Instance Method
-
+            constructor method of a instances attributes
+            No return value
         """
         pass
