@@ -1,0 +1,46 @@
+# 3. Print square
+
+# import module
+>>> print_square = __import__('4-print_square').print_square
+
+# print a square with size 4
+>>> print_square(4)
+####
+####
+####
+####
+
+# print a square with size 10
+>>> print_square(10)
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+
+# print a empty square - size 0
+>>> print_square(0)
+
+
+# print a square with size 1
+>>> print_square(1)
+#
+
+# Error 1: print a square with a negative size
+>>> try:
+...     print_square(-1)
+... except Exception as e:
+...     print(e)
+size must be >= 0
+
+# Error 2: print a square with a invalid size
+>>> try:
+...     print_square("hello")
+... except Exception as e:
+...     print(e)
+size must be an integer

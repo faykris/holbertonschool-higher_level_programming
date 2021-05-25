@@ -1,0 +1,39 @@
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
+
+# Correct output the new matrix
+>>> matrix_divided(matrix, 3)
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+# Matrix must be different to matrix_divided
+>>> matrix != matrix_divided(matrix, 3)
+True
+
+# Test error 1: matrix with a string value
+>>> try:
+...     print(matrix_divided([[12, "hello", 37], [43, 54, 67]], 5))
+... except Exception as e:
+...     print(e)
+matrix must be a matrix (list of lists) of integers/floats
+
+# Test error 2: matrix with a different length of a list element
+>>> try:
+...     print(matrix_divided([[4, 24, 60], [15, 20]], 2))
+... except Exception as e:
+...     print(e)
+Each row of the matrix must have the same size
+
+# Test error 3: when div is not a number
+>>> try:
+...     print(matrix_divided([[3, 68, 6], [45, 2, 10]], "hello"))
+... except Exception as e:
+...     print(e)
+div must be a number
+
+# Test error 4: when div is equal to zero
+>>> try:
+...     print(matrix_divided([[24, 16, 60], [15, 20, 36]], 0))
+... except Exception as e:
+...     print(e)
+division by zero
