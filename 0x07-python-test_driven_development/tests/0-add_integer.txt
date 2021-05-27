@@ -33,3 +33,4 @@ a must be an integer
 # sum with a overflow float value
 >>> add_integer(float("inf"), 5)
 89
+
