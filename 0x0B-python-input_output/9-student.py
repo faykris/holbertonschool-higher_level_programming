@@ -17,12 +17,6 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-    @property
     def to_json(self):
-        for (key, value) in self.__dict__.items():
-            if value == self.first_name:
-                return {key: value}
-            if value == self.last_name:
-                return {key: value}
-            if value == self.age:
-                return {key: value}
+        elem = self.__dict__.items()
+        return dict(elem)
