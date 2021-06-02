@@ -23,23 +23,3 @@
 # Test if the original list is not modified
 >>> print(my_list)
 [1, 4, 2, 3, 5]
-
-# Trying to sort a list inside of MyList
->>> my_list.append([1, 2, 3])
->>> try:
-...     my_list.print_sorted()
-... except Exception as e:
-...     print(e)
-'<' not supported between instances of 'list' and 'int'
-
-# Trying adding an argument to print_sorted() function
->>> try:
-...     my_list.print_sorted(1)
-... except Exception as e:
-...     print(e)
-print_sorted() takes 1 positional argument but 2 were given
-
-# Print a empty MyList with print_sorted() function
->>> em_list = MyList()
->>> em_list.print_sorted()
-[]
