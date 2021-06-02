@@ -12,7 +12,7 @@ def pascal_triangle(n):
         Args:
             n: must be integer
         Returns:
-            Nothing.
+            A list of list with a pascal triangle
     """
     p_list = []
     trow = [1]
