@@ -23,3 +23,8 @@
 # Test if the original list is not modified
 >>> print(my_list)
 [1, 4, 2, 3, 5]
+
+# Print a empty MyList with print_sorted() function
+>>> em_list = MyList()
+>>> em_list.print_sorted()
+[]
