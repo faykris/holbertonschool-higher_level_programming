@@ -30,3 +30,25 @@
 ... except Exception as e:
 ...     print("[{}] {}".format(e.__class__.__name__, e))
 [ValueError] distance must be greater than 0
+
+# other edge cases
+
+# error case - when the value is equal None
+>>> try:
+...     bg.integer_validator("distance", None)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] distance must be an integer
+
+# error case - when only have a name parameter
+>>> try:
+...     bg.integer_validator("distance")
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] integer_validator() missing 1 required positional argument: 'value'
+
+# Non error case - when the name is a empty string
+>>> try:
+...     bg.integer_validator("", 23)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
