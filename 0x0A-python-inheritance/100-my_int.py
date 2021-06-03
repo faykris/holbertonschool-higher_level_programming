@@ -7,4 +7,8 @@
 class MyInt(int):
     """ MyInt Class
     """
-    pass
+    def __eq__(self, other):
+        return not int.__eq__(self, other)
+
+    def __ne__(self, other):
+        return not int.__ne__(self, other)
