@@ -1,6 +1,12 @@
 # Test cases BaseGeometry
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
+# if area method is present
+>>> 'area' in dir(BaseGeometry)
+True
+
+# if integer_validator method is present
+True
 
 # adding object class with a valid integer value
 >>> bg = BaseGeometry()
@@ -52,3 +58,22 @@
 ...     bg.integer_validator("", 23)
 ... except Exception as e:
 ...     print("[{}] {}".format(e.__class__.__name__, e))
+
+# error case - when integer_validator doesn't have parameter
+>>> try:
+...     bg.integer_validator()
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+# View call area exception:
+>>> f = BaseGeometry()
+>>> f.area()
+Traceback (most recent call last):
+Exception: area() is not implemented
+
+# error case - exception in area method
+>>> f = BaseGeometry()
+>>> f.area()
+Traceback (most recent call last):
+Exception: area() is not implemented
