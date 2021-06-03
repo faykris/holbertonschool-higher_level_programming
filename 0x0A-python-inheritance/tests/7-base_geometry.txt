@@ -6,7 +6,10 @@
 True
 
 # if integer_validator method is present
+>>> 'integer_validator' in dir(BaseGeometry)
 True
+
+
 
 # adding object class with a valid integer value
 >>> bg = BaseGeometry()
@@ -72,8 +75,30 @@ True
 Traceback (most recent call last):
 Exception: area() is not implemented
 
-# error case - exception in area method
->>> f = BaseGeometry()
->>> f.area()
-Traceback (most recent call last):
-Exception: area() is not implemented
+# error case - when have an additional parameter on a function
+>>> try:
+...     bg.integer_validator("numbers", 2, 3)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] integer_validator() takes 3 positional arguments but 4 were given
+
+# error case - when value is a boolean
+>>> try:
+...     bg.integer_validator("numbers", True)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] numbers must be an integer
+
+# error case - when value is a tuple
+>>> try:
+...     bg.integer_validator("numbers", (4,))
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] numbers must be an integer
+
+# error case - when value is a list
+>>> try:
+...     bg.integer_validator("numbers", [1, 2, 3])
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] numbers must be an integer
