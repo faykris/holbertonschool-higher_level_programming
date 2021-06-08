@@ -18,7 +18,6 @@ class Base:
         """
         if id is not None:
             self.id = id
-
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
@@ -48,18 +47,34 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
+        """ from_json_string static method
+        Args:
+            json_string: string inf JSON format
+        Returns:
+            json loaded to python
+        """
         if json_string is None:
             return []
         return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
+        """ create class method
+        Args: dictionary for be processed
+            dictionary:
+        Returns:
+            a new dictionary of objects
+        """
         dummy = cls(12, 3)
         dummy.update(**dictionary)
         return dummy
 
     @classmethod
     def load_from_file(cls):
+        """ load_from_file class method
+        Returns:
+            List of dictionaries of objects
+        """
         l_dic = []
         if not os.path.exists("{}.json".format(cls.__name__)):
             return l_dic
