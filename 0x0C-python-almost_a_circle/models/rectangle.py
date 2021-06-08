@@ -152,8 +152,7 @@ class Rectangle(Base):
             args: When receives simple args
             kwargs: When receives key value args
         """
-
-        if args and len(args) != 0:
+        if args and args is not None and len(args) != 0:
             for i, arg in enumerate(args):
                 if i == 0:
                     self.id = arg
@@ -165,7 +164,7 @@ class Rectangle(Base):
                     self.__x = arg
                 elif i == 4:
                     self.__y = arg
-        elif kwargs and len(kwargs) != 0:
+        elif kwargs and kwargs is not None and len(kwargs) != 0:
             for key, value in kwargs.items():
                 if key == "id":
                     self.id = value
