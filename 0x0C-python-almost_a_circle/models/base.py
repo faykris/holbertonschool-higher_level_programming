@@ -42,7 +42,7 @@ class Base:
             if list_objs is not None:
                 for key in list_objs:
                     l_objs.append(cls.to_dictionary(key))
-            file.write(json.dumps(l_objs))
+            file.write(cls.to_json_string(l_objs))
             file.close()
 
     @staticmethod
