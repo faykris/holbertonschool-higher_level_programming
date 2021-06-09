@@ -27,8 +27,8 @@ class Base:
         Returns:
              value of a list in JSON representation
         """
-        if list_dictionaries is None or len(list_dictionaries) == 0:
-            return []
+        if list_dictionaries is None or list_dictionaries == []:
+            return "[]"
         return json.dumps(list_dictionaries)
 
     @classmethod
