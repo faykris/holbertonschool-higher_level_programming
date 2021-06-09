@@ -39,7 +39,7 @@ class Base:
         """
         l_objs = []
         with open("{}.json".format(cls.__name__), "w") as file:
-            if list_objs is not None:
+            if list_objs is not None and len(list_objs) != 0:
                 for key in list_objs:
                     l_objs.append(cls.to_dictionary(key))
             file.write(cls.to_json_string(l_objs))
