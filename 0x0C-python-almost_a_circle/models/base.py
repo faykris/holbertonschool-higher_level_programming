@@ -85,3 +85,13 @@ class Base:
                 l_dic.append(cls.create(**dic))
             file.close()
             return l_dic
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ empty class"""
+        pass
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ empty class"""
+        pass
