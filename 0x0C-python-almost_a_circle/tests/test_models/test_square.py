@@ -14,11 +14,11 @@ class TestRectangleValues(unittest.TestCase):
         """ Test Rectangle - Basic intranet cases
         """
         s1 = Square(10)
-        self.assertEqual(s1.id, 1)
+        self.assertEqual(s1.id, 9)
         s2 = Square(2)
-        self.assertEqual(s2.id, 2)
-        s3 = Square(10, 0, 0, 12)
-        self.assertEqual(s3.id, 12)
+        self.assertEqual(s2.id, 10)
+        s3 = Square(10, 0, 0, 15)
+        self.assertEqual(s3.id, 15)
 
         s4 = Square(3)
         self.assertEqual(s4.area(), 9)
