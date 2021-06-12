@@ -23,7 +23,15 @@ class TestBaseValues(unittest.TestCase):
         self.assertEqual(b4.id, 12)
         b5 = Base()
         self.assertEqual(b5.id, 4)
-
+        """ Other test cases """
+        self.assertEqual(Base.to_json_string(None), "[]")
+        self.assertEqual(Base.to_json_string([]), "[]")
+        self.assertEqual(Base.to_json_string([ { 'id': 12 }]), '[{"id": 12}]')
+        self.assertEqual(Base.to_json_string([{'id': 12}]), '[{"id": 12}]')
+        self.assertEqual(Base.from_json_string(None), [])
+        self.assertEqual(Base.from_json_string("[]"), [])
+        self.assertTrue(Base.from_json_string('[{ "id": 89 }]'), True)
+        self.assertEqual(Base.from_json_string('[{ "id": 89 }]'), [{ "id": 89 }])
 
 if __name__ == '__main__':
     unittest.main()
