@@ -1,15 +1,13 @@
 #!/usr/bin/node
-import { argv } from 'process';
 
 let i = 0;
 
-argv.forEach((val, index) => {
-  i = index;
-});
-
-if (i <= 1) {
+while (process.argv[i]) {
+  i++;
+}
+if (i === 2) {
   console.log('No argument');
-} else if (i === 2) {
+} else if (i === 3) {
   console.log('Argument found');
 } else {
   console.log('Arguments found');
