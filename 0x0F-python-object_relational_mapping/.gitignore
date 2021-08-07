@@ -1,0 +1,4 @@
+*.sql
+__pycache__
+.idea
+6-model_state.py
