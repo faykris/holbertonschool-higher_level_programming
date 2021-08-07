@@ -13,7 +13,7 @@ def realize_query(user, password, database):
                          charset="utf8")
     cursor = db.cursor()
     cursor.execute("""SELECT * FROM states WHERE name = '{}'
-                      ORDER BY states.id ASC""".format(sys.argv[4]))
+                      ORDER BY states.id ASC""".format(argv[4]))
     results = cursor.fetchall()
     for row in results:
         print(row)
