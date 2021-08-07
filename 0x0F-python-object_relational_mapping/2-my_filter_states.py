@@ -10,7 +10,9 @@ if __name__ == "__main__":
                          password=sys.argv[2], database=sys.argv[3])
     cursor = db.cursor()
     cursor.execute("""SELECT * FROM states WHERE name = '{}'
-                   ORDER BY states.id ASC""".format(sys.argv[4]))
+                   ORDER BY states.id ASC;""".format(sys.argv[4]))
     results = cursor.fetchall()
     for row in results:
         print(row)
+    cursor.close()
+    db.close()
