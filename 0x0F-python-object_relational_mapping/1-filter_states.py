@@ -5,10 +5,8 @@
 import sys
 import MySQLdb
 
-if __name__ == "__main__":
-    user = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
+
+def realize_query(user, password, database):
     db = MySQLdb.connect(host="localhost", port=3306, user=user,
                          password=password, database=database,
                          charset="utf8")
@@ -19,3 +17,7 @@ if __name__ == "__main__":
     for row in results:
         print(row)
     cursor.close()
+
+
+if __name__ == "__main__":
+    realize_query(sys.argv[1], sys.argv[2], sys.argv[3])
