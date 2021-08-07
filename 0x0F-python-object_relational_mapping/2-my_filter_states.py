@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """
 2. Filter states by user input
+script that takes in an argument and displays all values in the
+states table of hbtn_0e_0_usa where name matches the argument.
 """
-from sys import argv
-import MySQLdb
 
 
 def realize_query(user, password, database, state):
@@ -19,4 +19,7 @@ def realize_query(user, password, database, state):
 
 
 if __name__ == "__main__":
+    from sys import argv
+    import MySQLdb
+
     realize_query(argv[1], argv[2], argv[3], argv[4])
