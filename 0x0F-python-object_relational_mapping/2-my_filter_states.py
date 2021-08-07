@@ -7,6 +7,7 @@ import MySQLdb
 
 
 def realize_query(user, password, database):
+    """function that connect with mysql and runs a query"""
     db = MySQLdb.connect(host="localhost", port=3306, user=user,
                          password=password, database=database,
                          charset="utf8")
@@ -17,6 +18,7 @@ def realize_query(user, password, database):
     for row in results:
         print(row)
     cursor.close()
+    db.close()
 
 
 if __name__ == "__main__":
