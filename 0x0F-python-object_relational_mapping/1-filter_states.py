@@ -2,7 +2,7 @@
 """
 1. Filter states
 """
-import sys
+from sys import argv
 import MySQLdb
 
 
@@ -22,4 +22,4 @@ def realize_query(user, password, database):
 
 
 if __name__ == "__main__":
-    realize_query(sys.argv[1], sys.argv[2], sys.argv[3])
+    realize_query(argv[1], argv[2], argv[3])
