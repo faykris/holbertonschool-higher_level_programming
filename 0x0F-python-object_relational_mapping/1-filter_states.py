@@ -12,13 +12,12 @@ def realize_query(user, password, database):
                          password=password, database=database,
                          charset="utf8")
     cursor = db.cursor()
-    sql = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC"
+    sql = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC;"
     cursor.execute(sql)
     results = cursor.fetchall()
     for row in results:
         print(row)
     cursor.close()
-    db.close()
 
 
 if __name__ == "__main__":
