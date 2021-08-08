@@ -13,10 +13,9 @@ if __name__ == "__main__":
                            pool_pre_ping=True)
     Base.metadata.create_all(engine)
     session = Session(engine)
-    i = 0
-    i = session.query(State).filter(State.name == argv[4]).count()
-    if i != 0:
-        print("{}".format(i))
+    id_state = session.query(State.id).filter(State.name == argv[4]).scalar()
+    if id_state is not None:
+        print("{}".format(id_state))
     else:
         print("Not found")
     session.close()
