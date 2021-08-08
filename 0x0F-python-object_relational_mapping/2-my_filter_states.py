@@ -10,12 +10,12 @@ if __name__ == "__main__":
 
     from sys import argv
     import MySQLdb
-
+    state = argv[4]
     db = MySQLdb.connect(host="localhost", user=argv[1], password=argv[2],
                          database=argv[3], port=3306)
-    cursor = db.cursor()
-    cursor.execute("""SELECT * FROM states WHERE name='{}'
-                      ORDER BY states.id ASC""".format(argv[4]))
-    results = cursor.fetchall()
-    for row in results:
-        print(row)
+    with db.cursor() as cursor:
+        cursor.execute("""SELECT * FROM states WHERE name='{}'
+                      ORDER BY states.id ASC""".format(state))
+        results = cursor.fetchall()
+        for row in results:
+            print(row)
