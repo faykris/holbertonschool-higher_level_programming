@@ -11,8 +11,10 @@ if __name__ == '__main__':
     except IndexError:
         user = {'q': ""}
     r = requests.post(url, user)
-
-    if len(r.json()) == 0:
-        print("No result")
-    else:
-        print("[{}] {}".format(r.json().get('id'), r.json().get('name')))
+    try:
+        if len(r.json()) == 0:
+            print("No result")
+        else:
+            print("[{}] {}".format(r.json().get('id'), r.json().get('name')))
+    except:
+        print("Not a valid JSON")
