@@ -4,14 +4,15 @@
 
 def find_peak(list_of_integers):
     """Calculates a peak of a list"""
-    if not list_of_integers or type(list_of_integers) != list:
+    if len(list_of_integers) == 0:
         return None
-    n = len(list_of_integers)
-    n_list = list_of_integers
-    if n == 1:
-        return n_list[0]
-    if n_list[n - 1] >= n_list[n - 2]:
-        return n_list[n - 1]
-    for i in range(1, n - 1):
-        if n_list[i] >= n_list[i - 1] and n_list[i] >= n_list[i + 1]:
-            return n_list[i]
+    nums = list_of_integers
+    low = 0
+    high = len(nums) - 1
+    while low < high:
+        mid = low + (high - low + 1) // 2
+        if mid - 1 >= 0 and nums[mid - 1] <= nums[mid]:
+            low = mid
+        else:
+            high = mid - 1
+    return nums[high]
