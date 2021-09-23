@@ -1,4 +1,4 @@
-window.onload = function () {
+$(document).ready(function () {
   $('DIV#add_item').click(function () {
     $('UL.my_list').append('<li>Item</li>');
   });
@@ -10,4 +10,4 @@ window.onload = function () {
   $('DIV#clear_list').click(function () {
     $('UL.my_list').empty();
   });
-};
+});
